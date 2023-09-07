@@ -27,7 +27,7 @@ const LoginScreen = () => {
         const token = await AsyncStorage.getItem('authToken');
 
         if (token) {
-          navigation.replace('Main');
+          navigation.replace('LandingScreen');
         }
       } catch (err) {
         console.log('error message', err);
@@ -51,7 +51,7 @@ const LoginScreen = () => {
         console.log(response);
         const token = response.data.token;
         AsyncStorage.setItem('authToken', token);
-        navigation.replace('Main');
+        navigation.replace('LandingScreen');
       })
       .catch((error) => {
         Alert.alert('Login Error', 'Invalid Email');

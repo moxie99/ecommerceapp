@@ -86,7 +86,7 @@ const StackNavigator = () => {
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name='Main'
+          name='LandingScreen'
           component={BottomTabs}
           options={{ headerShown: false }}
         />
