@@ -45,6 +45,9 @@ const ProductInfoScreen = () => {
           alignItems: 'center',
         }}
       >
+        <Pressable onPress={() => navigation.goBack()}>
+          <Ionicons name='arrow-back-sharp' size={24} color='black' />
+        </Pressable>
         <Pressable
           style={{
             flexDirection: 'row',
@@ -65,7 +68,6 @@ const ProductInfoScreen = () => {
           />
           <TextInput placeholder='Search Amazon.in' />
         </Pressable>
-
         <Feather name='mic' size={24} color='black' />
       </View>
 

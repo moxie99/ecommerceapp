@@ -225,9 +225,7 @@ const HomeScreen = () => {
   const onGenderOpen = useCallback(() => {
     setCompanyOpen(false);
   }, []);
-
   const cart = useSelector((state) => state.cart.cart);
-  console.log('===cart===', cart);
   const [modalVisible, setModalVisible] = useState(false);
   useEffect(() => {
     if (userId) {
@@ -553,6 +551,7 @@ const HomeScreen = () => {
             {/* already added addresses */}
             {addresses?.map((item, index) => (
               <Pressable
+                key={index}
                 onPress={() => setSelectedAdress(item)}
                 style={{
                   width: 140,

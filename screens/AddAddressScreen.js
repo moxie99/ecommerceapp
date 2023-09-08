@@ -9,7 +9,7 @@ import {
 import React, { useEffect, useContext, useState, useCallback } from 'react';
 import { Feather, AntDesign } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
-import { Entypo } from '@expo/vector-icons';
+import { Entypo, Ionicons } from '@expo/vector-icons';
 import { useFocusEffect, useNavigation } from '@react-navigation/native';
 import axios from 'axios';
 import { UserType } from '../utils/UserContext';
@@ -40,7 +40,6 @@ const AddAddressScreen = () => {
       fetchAddresses();
     }, [])
   );
-  console.log('addresses', addresses);
   return (
     <ScrollView showsVerticalScrollIndicator={false} style={{ marginTop: 50 }}>
       <View
@@ -51,6 +50,9 @@ const AddAddressScreen = () => {
           alignItems: 'center',
         }}
       >
+        <Pressable onPress={() => navigation.goBack()}>
+          <Ionicons name='arrow-back-sharp' size={24} color='black' />
+        </Pressable>
         <Pressable
           style={{
             flexDirection: 'row',
@@ -101,6 +103,7 @@ const AddAddressScreen = () => {
           {/* all the added adresses */}
           {addresses?.map((item, index) => (
             <Pressable
+              key={index}
               style={{
                 borderWidth: 1,
                 borderColor: '#D0D0D0',
@@ -128,14 +131,14 @@ const AddAddressScreen = () => {
               </Text>
 
               <Text style={{ fontSize: 15, color: '#181818' }}>
-                India, Bangalore
+                Lagos, Nigeria
               </Text>
 
               <Text style={{ fontSize: 15, color: '#181818' }}>
-                phone No : {item?.mobileNo}
+                Phone No : {item?.mobileNo}
               </Text>
               <Text style={{ fontSize: 15, color: '#181818' }}>
-                pin code : {item?.postalCode}
+                Postal code : {item?.postalCode}
               </Text>
 
               <View

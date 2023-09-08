@@ -12,6 +12,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import jwt_decode from 'jwt-decode';
 import { UserType } from '../utils/UserContext';
 import axios from 'axios';
+import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 
 const AddressScreen = () => {
@@ -66,7 +67,20 @@ const AddressScreen = () => {
   };
   return (
     <ScrollView style={{ marginTop: 50 }}>
-      <View style={{ height: 50, backgroundColor: '#00CED1' }} />
+      <View
+        style={{
+          height: 50,
+          backgroundColor: '#00CED1',
+          justifyContent: 'center',
+        }}
+      >
+        <Pressable
+          onPress={() => navigation.goBack()}
+          style={{ marginLeft: 10 }}
+        >
+          <Ionicons name='arrow-back-sharp' size={24} color='black' />
+        </Pressable>
+      </View>
 
       <View style={{ padding: 10 }}>
         <Text style={{ fontSize: 17, fontWeight: 'bold' }}>
@@ -101,7 +115,7 @@ const AddressScreen = () => {
               marginTop: 10,
               borderRadius: 5,
             }}
-            placeholder='enter your name'
+            placeholder='Enter your name'
           />
         </View>
 
@@ -182,7 +196,7 @@ const AddressScreen = () => {
         </View>
 
         <View>
-          <Text style={{ fontSize: 15, fontWeight: 'bold' }}>Pincode</Text>
+          <Text style={{ fontSize: 15, fontWeight: 'bold' }}>Postalcode</Text>
 
           <TextInput
             value={postalCode}
