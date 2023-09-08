@@ -227,6 +227,7 @@ const HomeScreen = () => {
   }, []);
 
   const cart = useSelector((state) => state.cart.cart);
+  console.log('===cart===', cart);
   const [modalVisible, setModalVisible] = useState(false);
   useEffect(() => {
     if (userId) {
